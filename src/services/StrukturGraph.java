@@ -47,4 +47,28 @@ public class StrukturGraph {
         nodeCount++;
         System.out.println("Node " + name + " berhasil ditambahkan.");
     }
+
+    public void addEdge(String from, String to, int weight) {
+        int fromIndex = getNodeIndex(from);
+        int toIndex = getNodeIndex(to);
+
+        if (fromIndex == -1 || toIndex == -1) {
+            System.out.println("Salah satu node tidak ditemukan.");
+            return;
+        }
+
+        if (fromIndex == toIndex) {
+            System.out.println("Tidak dapat menambahkan edge ke node yang sama.");
+            return;
+        }
+
+        if (adjacencyMatrix[fromIndex][toIndex] != null) {
+            System.out.println("Edge sudah ada. Silakan update jika ingin mengubah bobot.");
+            return;
+        }
+
+        adjacencyMatrix[fromIndex][toIndex] = new Edge(nodes[fromIndex], nodes[toIndex], weight);
+
+        System.out.println("Edge dari " + from + " ke " + to + " dengan bobot " + weight + " berhasil ditambahkan.");
+    }
 }
