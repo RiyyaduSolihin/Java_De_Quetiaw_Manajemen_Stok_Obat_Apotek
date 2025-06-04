@@ -71,7 +71,8 @@ public class StrukturGraph {
 
         System.out.println("Edge dari " + from + " ke " + to + " dengan bobot " + weight + " berhasil ditambahkan.");
     }
-     public void updateEdge(String from, String to, int newWeight) {
+
+    public void updateEdge(String from, String to, int newWeight) {
         int fromIndex = getNodeIndex(from);
         int toIndex = getNodeIndex(to);
 
@@ -93,6 +94,31 @@ public class StrukturGraph {
         // Gunakan setter untuk memperbarui bobot
         edge.setWeight(newWeight);
         System.out.println("lokasi dari " + from + " ke " + to + " berhasil diperbarui dengan jarak " + newWeight + ".");
+    }
+
+    public void printGraph() {
+        System.out.println("Peta Jalur Antar Lokasi:");
+        for (int i = 0; i < nodeCount; i++) {
+            System.out.print(nodes[i].getName() + ": ");
+            for (int j = 0; j < nodeCount; j++) {
+                if (adjacencyMatrix[i][j] == null) {
+                    System.out.print("Tidak diketahui ");
+                } else {
+                    System.out.print(adjacencyMatrix[i][j].getWeight() + " ");
+                }
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+        System.out.println("Jarak antar lokasi:");
+        for (int i = 0; i < nodeCount; i++) {
+            for (int j = 0; j < nodeCount; j++) {
+                if (adjacencyMatrix[i][j] != null) {
+                    System.out.println("[Lokasi " + nodes[i].getName() + " -> Lokasi " + nodes[j].getName() + ", jarak: " + adjacencyMatrix[i][j].getWeight() + " KM]");
+                }
+            }
+        }
     }
 }
 
