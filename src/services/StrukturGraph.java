@@ -71,4 +71,28 @@ public class StrukturGraph {
 
         System.out.println("Edge dari " + from + " ke " + to + " dengan bobot " + weight + " berhasil ditambahkan.");
     }
+     public void updateEdge(String from, String to, int newWeight) {
+        int fromIndex = getNodeIndex(from);
+        int toIndex = getNodeIndex(to);
+
+        if (fromIndex == -1 && toIndex == -1) {
+            System.out.println("Kedua lokasi tidak ditemukan.");
+            return;    
+        }
+        if (fromIndex == -1 || toIndex == -1) {
+            System.out.println("Salah satu lokasi  tidak ditemukan.");
+            return;
+        }
+
+        Edge edge = adjacencyMatrix[fromIndex][toIndex];
+        if (edge == null) {
+            System.out.println("Jalur belum ada.");
+            return;
+        }
+
+        // Gunakan setter untuk memperbarui bobot
+        edge.setWeight(newWeight);
+        System.out.println("lokasi dari " + from + " ke " + to + " berhasil diperbarui dengan jarak " + newWeight + ".");
+    }
 }
+
