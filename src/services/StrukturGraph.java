@@ -63,7 +63,7 @@ public class StrukturGraph {
         }
 
         if (adjacencyMatrix[fromIndex][toIndex] != null) {
-            System.out.println("Jalur sudah ada. Silakan update jika ingin mengubah bobot.");
+            System.out.println("Jalur sudah ada. Silakan update jika ingin mengubah jarak.");
             return;
         }
 
