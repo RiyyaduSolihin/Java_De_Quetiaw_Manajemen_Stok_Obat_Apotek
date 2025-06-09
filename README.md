@@ -3,7 +3,7 @@
 
 # Fitur Aplikasi ini
 - Tambah lokasi
-- Ubah lokasi
+- Ubah jarak lokasi
 - Cari jalur tependek
 - Hubungkan Lokasi
 - Tampilkan Peta logistik
