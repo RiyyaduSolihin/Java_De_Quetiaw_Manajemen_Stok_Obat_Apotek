@@ -1,6 +1,7 @@
 package util;
 
 import java.util.Scanner;
+import services.StrukturGraph;
 
 public class GraphMain {
     public static void main(String[] args) {
